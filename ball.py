@@ -1,3 +1,4 @@
+from random import randint
 from turtle import Turtle
 
 class Ball(Turtle):
@@ -10,7 +11,7 @@ class Ball(Turtle):
         self.speed("fastest")
         self.move_speed = 0.07
         self.move_x = 10
-        self.move_y = 10
+        self.move_y = randint(-10, 10)
 
     def move(self):
         new_x = self.xcor() + self.move_x
