@@ -53,7 +53,7 @@ def main(name1, name2):
             ball.reset_position()
             scoreboard.player2_point()
 
-        if scoreboard.player1_score >= 2:
+        if scoreboard.player1_score >= 10:
             game_is_on = False
             scoreboard.game_over(name1)
 
