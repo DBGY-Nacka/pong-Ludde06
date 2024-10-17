@@ -28,7 +28,7 @@ class Scoreboard(Turtle):
         self.goto(150, 250)
         self.write(f"{self.name2}: {self.player2_score}", align=ALIGNMENT, font=FONT)
         self.goto(0, 200)
-        self.write(f"{int(time.time() - self.start_time)}", align=ALIGNMENT, font=FONT2)#Live time - start time
+        self.write(f"{int(time.time() - self.start_time)}", align=ALIGNMENT, font=FONT2)#Live time - Start time
 
     def player1_point(self):
         self.player1_score += 1

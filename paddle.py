@@ -11,8 +11,8 @@ class Paddle(Turtle):
 
     def up(self):
         new_y = self.ycor() + 20
-        self.goto(self.xcor(), new_y)#Decreases the x coordinate by 20
+        self.goto(self.xcor(), new_y)#Decrease the y coordinate by 20
     
     def down(self):
         new_y = self.ycor() - 20
-        self.goto(self.xcor(), new_y)
+        self.goto(self.xcor(), new_y)#Increase the y coordinate by 20
