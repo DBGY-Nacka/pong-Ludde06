@@ -1,8 +1,8 @@
+from time import sleep
 from turtle import Screen
 from paddle import Paddle
 from ball import Ball
 from scoreboard import Scoreboard
-import time
 
 def create_users():
     name1 = "Player 1"
@@ -19,37 +19,37 @@ def create_users():
 
 def main(name1, name2):
 
-    game_is_on = True
-
     ball = Ball()
-    paddle1 = Paddle((-350, 0))
-    paddle2 = Paddle((350, 0))
+    stick1 = Paddle((-350, 0))
+    stick2 = Paddle((350, 0))
     scoreboard = Scoreboard(name1, name2)
 
-    screen.listen()
-    screen.onkey(paddle2.up, "Up")     
-    screen.onkey(paddle2.down, "Down")  
-    screen.onkey(paddle1.up, "w")
-    screen.onkey(paddle1.down, "s") 
+    screen.listen()#Listen to key inputs  
+    screen.onkey(stick2.up, "Up")
+    screen.onkey(stick2.down, "Down")  
+    screen.onkey(stick1.up, "w")
+    screen.onkey(stick1.down, "s") 
+
+    game_is_on = True
 
     while game_is_on:
         screen.update()
-        time.sleep(ball.move_speed)
+        sleep(ball.movement_speed)
         ball.move()
 
         scoreboard.update_scoreboard()
 
-        if (ball.xcor() > 320 and ball.distance(paddle2) < 50) or (ball.xcor() < -320 and ball.distance(paddle1) < 50 ):
-            ball.x_bounce()
-            
         if ball.ycor() < -290 or ball.ycor() > 290:
-            ball.y_bounce()
+            ball.y_bounce()#If the ball bounces on the walls up or down
 
-        if ball.xcor() > 380:
+        if (ball.xcor() > 330 and ball.distance(stick2) < 55) or (ball.xcor() < -330 and ball.distance(stick1) < 55):
+            ball.x_bounce()#If the ball bounces on stick 1 or 2 it changes direction (x_bounce)            
+
+        if ball.xcor() > 345:
             ball.reset_position()
-            scoreboard.player1_point()
+            scoreboard.player1_point()#Give player 1 a point
 
-        if ball.xcor() < -380:
+        if ball.xcor() < -345:
             ball.reset_position()
             scoreboard.player2_point()
 

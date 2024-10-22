@@ -2,8 +2,8 @@ from turtle import Turtle
 import time
 
 ALIGNMENT = "center"
-FONT = ("Courier", 25, "normal")
-FONT2 = ("Courier", 20, "normal")
+FONT = ("Verdana", 25, "normal")
+FONT2 = ("Verdana", 20, "normal")
 POSITION = (0, 255)
 
 class Scoreboard(Turtle):
@@ -27,16 +27,14 @@ class Scoreboard(Turtle):
         self.write(f"{self.name1}: {self.player1_score}", align=ALIGNMENT, font=FONT)#Player: score
         self.goto(150, 250)
         self.write(f"{self.name2}: {self.player2_score}", align=ALIGNMENT, font=FONT)
-        self.goto(0, 200)
+        self.goto(0, 230)
         self.write(f"{int(time.time() - self.start_time)}", align=ALIGNMENT, font=FONT2)#Live time - Start time
 
     def player1_point(self):
         self.player1_score += 1
-        self.update_scoreboard()
 
     def player2_point(self):
         self.player2_score += 1
-        self.update_scoreboard()
 
     def game_over(self, player):
         self.clear()
