@@ -10,7 +10,7 @@ class Ball(Turtle):
         self.color("white")
         self.speed("fastest")
         self.penup()
-        self.movement_speed = 0.06
+        self.movement_speed = 0.07
         self.move_x = 10
         self.move_y = randint(-10, 10) #Random direction in y direction
 
