@@ -48,10 +48,14 @@ def main(name1, name2):
         if ball.xcor() > 345:
             ball.reset_position()
             scoreboard.player1_point()#Give player 1 a point
+            stick1.goto(-350, 0)
+            stick2.goto(350, 0)
 
         if ball.xcor() < -345:
             ball.reset_position()
             scoreboard.player2_point()
+            stick1.goto(-350, 0)
+            stick2.goto(350, 0)
 
         if scoreboard.player1_score >= 10:
             game_is_on = False
